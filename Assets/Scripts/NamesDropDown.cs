@@ -25,7 +25,18 @@ public class NamesDropDown : MonoBehaviour {
         }
         else
         {
-            dropdown.options.Clear();
+            LoadPlayers();
+        }
+
+        dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
+        GameData.Instance.selectedPlayer = configManager.config.players[dropdown.value];
+        //AdjustTemplateHeight();
+
+    }
+
+    public void LoadPlayers()
+    {
+        dropdown.options.Clear();
             for (int i = 0; i < configManager.config.players.Length; i++)
             {
                 TMP_Dropdown.OptionData option = new(configManager.config.players[i].name);
@@ -33,12 +44,6 @@ public class NamesDropDown : MonoBehaviour {
             }
             dropdown.value = 0;
             dropdown.RefreshShownValue();
-        }
-
-        dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
-        GameData.Instance.selectedPlayer = configManager.config.players[dropdown.value];
-        //AdjustTemplateHeight();
-
     }
 
     void AdjustTemplateHeight() {

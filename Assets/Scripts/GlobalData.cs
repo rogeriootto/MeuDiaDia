@@ -15,4 +15,5 @@ public class GameData : MonoBehaviour {
             Destroy(gameObject); 
         }
     }
+    
 }

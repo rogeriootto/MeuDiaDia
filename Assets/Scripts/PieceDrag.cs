@@ -6,8 +6,12 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector2 startPosition;
-    private Vector3 startScale;
-    private Vector3 finalScale;
+    public Vector3 startScale;
+    public Vector3 finalScale;
+    public bool isConnected = false;
+    public bool shouldReturnToStartPosition = true;
+
+    public bool isDragging = false;
 
     [SerializeField] private float scaleMultiplier;
 
@@ -18,7 +22,7 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     void Start() {
         startScale = rectTransform.localScale;
-        finalScale = startScale * scaleMultiplier;
+        finalScale = new Vector3(scaleMultiplier, scaleMultiplier, scaleMultiplier);
         startPosition = rectTransform.anchoredPosition;
     }
 
@@ -26,17 +30,35 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         
     }
 
-    public void OnBeginDrag(PointerEventData eventData) {
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (isConnected) return; 
+        Debug.Log("OnBeginDrag called on " + gameObject.name);
         rectTransform.localScale = finalScale;
+        canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData) {
+        if (isConnected) return;
+        isDragging = true;
+
         rectTransform.anchoredPosition += eventData.delta;
+        
     }
 
-     public void OnEndDrag(PointerEventData eventData){
-        rectTransform.localScale = startScale;
-        rectTransform.anchoredPosition = startPosition;
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (shouldReturnToStartPosition && !isConnected)
+        {
+
+            rectTransform.anchoredPosition = startPosition;
+            rectTransform.localScale = startScale;
+            LevelData.howManyWrong++;
+
+        }
+        LevelData.howManyTries++;
+        canvasGroup.blocksRaycasts = true;
+        isDragging = false;
     }
     
 }
