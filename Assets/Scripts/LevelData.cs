@@ -85,6 +85,7 @@ public class LevelData : MonoBehaviour
                 {
                     hintTimeSpent = 0f;
                     generateHint();
+                    howManyHints++;
                 }
 
             }
@@ -101,8 +102,6 @@ public class LevelData : MonoBehaviour
     {
         if (!piece1 && !isPiece1Connected)
         {
-            Debug.Log("Generating hint for piece 1");
-            Debug.Log(isPiece1Connected);
             GameObject.FindWithTag("hint1").GetComponent<HintLogic>().hint = true;
             piece1 = true;
             return;

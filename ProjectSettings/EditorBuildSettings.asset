@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2f13081a04325a649b490fad1b3add4a
   - enabled: 1
+    path: Assets/Scenes/Level-1.unity
+    guid: 1e98d1f0426d5044eb53da4fe462c532
+  - enabled: 1
     path: Assets/Scenes/PreMatch.unity
     guid: 2ad6e3864382a8d4f8436984d100dae4
   - enabled: 1
@@ -26,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ConfigEditPlayer.unity
     guid: fd0f6179b182ae745a14f86ed97840a4
-  - enabled: 1
-    path: Assets/Scenes/Level-1.unity
-    guid: 1e98d1f0426d5044eb53da4fe462c532
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6cd9d96c952cb384f865e8251d9bd2b8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

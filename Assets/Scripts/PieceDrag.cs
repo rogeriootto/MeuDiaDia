@@ -12,6 +12,8 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public bool shouldReturnToStartPosition = true;
 
     public bool isDragging = false;
+    public GameObject rightPieceVFX;
+     public AudioClip correctSFX;
 
     [SerializeField] private float scaleMultiplier;
 
@@ -26,10 +28,6 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         startPosition = rectTransform.anchoredPosition;
     }
 
-    void Update() {
-        
-    }
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (isConnected) return; 
@@ -41,7 +39,6 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnDrag(PointerEventData eventData) {
         if (isConnected) return;
         isDragging = true;
-
         rectTransform.anchoredPosition += eventData.delta;
         
     }
@@ -56,6 +53,16 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             LevelData.howManyWrong++;
 
         }
+        else if (GameData.Instance.selectedPlayer.fancyGraphicsOn)
+        {
+            Instantiate(rightPieceVFX, new Vector3(transform.position.x, transform.position.y, 50), Quaternion.identity);
+            AudioSource.PlayClipAtPoint(correctSFX, Camera.main.transform.position);
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(correctSFX, Camera.main.transform.position);
+        }
+
         LevelData.howManyTries++;
         canvasGroup.blocksRaycasts = true;
         isDragging = false;

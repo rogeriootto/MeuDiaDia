@@ -432,6 +432,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 4938095755617958529, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
+  correctSFX: {fileID: 8300000, guid: 363bddca6e9abe64a87ba5968fd724a4, type: 3}
   scaleMultiplier: 1
 --- !u!225 &210726232
 CanvasGroup:
@@ -539,6 +541,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 0}
+  correctSFX: {fileID: 0}
   scaleMultiplier: 1
 --- !u!225 &239789774
 CanvasGroup:
@@ -752,6 +756,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 0}
+  correctSFX: {fileID: 0}
   scaleMultiplier: 1
 --- !u!225 &278874949
 CanvasGroup:
@@ -977,6 +983,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 0}
+  correctSFX: {fileID: 0}
   scaleMultiplier: 1
 --- !u!114 &476889117
 MonoBehaviour:
@@ -1072,6 +1080,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 0}
+  correctSFX: {fileID: 0}
   scaleMultiplier: 1
 --- !u!225 &488752365
 CanvasGroup:
@@ -1191,6 +1201,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 4938095755617958529, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
+  correctSFX: {fileID: 8300000, guid: 363bddca6e9abe64a87ba5968fd724a4, type: 3}
   scaleMultiplier: 1
 --- !u!114 &634553613
 MonoBehaviour:
@@ -1286,6 +1298,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 4938095755617958529, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
+  correctSFX: {fileID: 8300000, guid: 363bddca6e9abe64a87ba5968fd724a4, type: 3}
   scaleMultiplier: 1
 --- !u!114 &687352408
 MonoBehaviour:
@@ -1568,6 +1582,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 0}
+  correctSFX: {fileID: 0}
   scaleMultiplier: 1
 --- !u!114 &920915245
 MonoBehaviour:
@@ -2180,7 +2196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1581073810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2675,6 +2691,8 @@ MonoBehaviour:
   isConnected: 0
   shouldReturnToStartPosition: 1
   isDragging: 0
+  rightPieceVFX: {fileID: 0}
+  correctSFX: {fileID: 0}
   scaleMultiplier: 1
 --- !u!225 &2129165980
 CanvasGroup:

@@ -66,15 +66,11 @@ public class CardEffect : MonoBehaviour
 
     private void ScaleLogic()
     {
-        if (pieceDrag.isDragging && !pieceDrag.isConnected)
+        if (pieceDrag.isConnected)
         {
             rectTransform.localScale = pieceDrag.finalScale;
         }
-        else if (!pieceDrag.isDragging && !pieceDrag.isConnected)
-        {
-            rectTransform.localScale = pieceDrag.startScale;
-        }
-        if (pieceDrag.isConnected)
+        else if (pieceDrag.isDragging)
         {
             rectTransform.localScale = pieceDrag.finalScale;
         }
