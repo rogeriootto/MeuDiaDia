@@ -13,6 +13,9 @@ EditorBuildSettings:
     guid: 2f13081a04325a649b490fad1b3add4a
   - enabled: 1
     path: Assets/Scenes/Level-1.unity
+    guid: 858d7a075cba1a90ea83495c1ba90c6d
+  - enabled: 1
+    path: Assets/Scenes/Level-2.unity
     guid: 1e98d1f0426d5044eb53da4fe462c532
   - enabled: 1
     path: Assets/Scenes/PreMatch.unity

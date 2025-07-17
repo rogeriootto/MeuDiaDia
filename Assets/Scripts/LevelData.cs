@@ -54,6 +54,9 @@ public class LevelData : MonoBehaviour
         hintTimeSpent = 0f;
         refTimeSpentOnLevel = GameData.Instance.selectedPlayer.refHintTime;
         startTime = DateTime.Now;
+        piece1 = false;
+        piece2 = false;
+        piece3 = false;
     }
 
     void Update()
@@ -91,11 +94,12 @@ public class LevelData : MonoBehaviour
             }
 
             if (howManyCorrect == 3)
-                {
-                    StartCoroutine(WaitAndGoToNextLevel());
-                }
+            {
+                StartCoroutine(WaitAndGoToNextLevel());
+            }
         }
         ifConnectedStopHint();
+        Debug.Log(hintTimeSpent);
     }
 
     private void generateHint()

@@ -9,13 +9,16 @@ public class CardEffect : MonoBehaviour
 
     private RectTransform rectTransform;
     [SerializeField] private GameObject mainLogic;
-    private PieceDrag pieceDrag;
+    private HintLogic hint;
 
+    private PieceDrag pieceDrag;
     private Vector3 movementDelta;
     private Vector3 rotationDelta;
 
+    public Vector3 startScale;
+
     [SerializeField] private float rotationAmount = 20;
-    [SerializeField] private float movementAmount = 10;
+    // [SerializeField] private float movementAmount = 10;
     [SerializeField] private float movementSpeed = 0.7f;
     [SerializeField] private float rotationSpeed = 2;
 
@@ -26,6 +29,8 @@ public class CardEffect : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         pieceDrag = mainLogic.GetComponent<PieceDrag>();
+        hint = GetComponent<HintLogic>();
+        startScale = rectTransform.localScale;
     }
 
     public void Update()
@@ -66,13 +71,15 @@ public class CardEffect : MonoBehaviour
 
     private void ScaleLogic()
     {
-        if (pieceDrag.isConnected)
+        if (pieceDrag.isConnected || pieceDrag.isDragging)
         {
             rectTransform.localScale = pieceDrag.finalScale;
         }
-        else if (pieceDrag.isDragging)
+        else if (!pieceDrag.isConnected || !hint.hint)
         {
-            rectTransform.localScale = pieceDrag.finalScale;
+            rectTransform.localScale = startScale;
         }
+
     }
+    
 }
