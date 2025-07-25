@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLogic: {fileID: 634553609}
+  startScale: {x: 0, y: 0, z: 0}
   rotationAmount: 20
-  movementAmount: 10
   movementSpeed: 0.7
   rotationSpeed: 20
 --- !u!225 &54930894
@@ -435,6 +435,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 4938095755617958529, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
   correctSFX: {fileID: 8300000, guid: 363bddca6e9abe64a87ba5968fd724a4, type: 3}
   scaleMultiplier: 1
+  afterImage: {fileID: 1802610936}
 --- !u!225 &210726232
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -544,6 +545,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 0}
   correctSFX: {fileID: 0}
   scaleMultiplier: 1
+  afterImage: {fileID: 0}
 --- !u!225 &239789774
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -646,8 +648,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLogic: {fileID: 488752362}
+  startScale: {x: 0, y: 0, z: 0}
   rotationAmount: 20
-  movementAmount: 10
   movementSpeed: 0.7
   rotationSpeed: 20
 --- !u!225 &263360938
@@ -759,6 +761,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 0}
   correctSFX: {fileID: 0}
   scaleMultiplier: 1
+  afterImage: {fileID: 1086373850}
 --- !u!225 &278874949
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -861,8 +864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLogic: {fileID: 2129165977}
+  startScale: {x: 0, y: 0, z: 0}
   rotationAmount: 20
-  movementAmount: 10
   movementSpeed: 0.7
   rotationSpeed: 20
 --- !u!225 &446233843
@@ -986,6 +989,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 0}
   correctSFX: {fileID: 0}
   scaleMultiplier: 1
+  afterImage: {fileID: 0}
 --- !u!114 &476889117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1087,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 0}
   correctSFX: {fileID: 0}
   scaleMultiplier: 1
+  afterImage: {fileID: 263360935}
 --- !u!225 &488752365
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1204,6 +1209,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 4938095755617958529, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
   correctSFX: {fileID: 8300000, guid: 363bddca6e9abe64a87ba5968fd724a4, type: 3}
   scaleMultiplier: 1
+  afterImage: {fileID: 54930891}
 --- !u!114 &634553613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,6 +1307,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 4938095755617958529, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
   correctSFX: {fileID: 8300000, guid: 363bddca6e9abe64a87ba5968fd724a4, type: 3}
   scaleMultiplier: 1
+  afterImage: {fileID: 1308634367}
 --- !u!114 &687352408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1585,6 +1592,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 0}
   correctSFX: {fileID: 0}
   scaleMultiplier: 1
+  afterImage: {fileID: 0}
 --- !u!114 &920915245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1805,8 +1813,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLogic: {fileID: 278874946}
+  startScale: {x: 0, y: 0, z: 0}
   rotationAmount: 20
-  movementAmount: 10
   movementSpeed: 0.7
   rotationSpeed: 20
 --- !u!225 &1086373853
@@ -1912,8 +1920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLogic: {fileID: 687352405}
+  startScale: {x: 0, y: 0, z: 0}
   rotationAmount: 20
-  movementAmount: 10
   movementSpeed: 0.7
   rotationSpeed: 20
 --- !u!225 &1308634370
@@ -2030,7 +2038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7294118, g: 0.8745098, b: 0.85882354, a: 1}
+  m_Color: {r: 0.8039216, g: 0.9098039, b: 0.95686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2322,8 +2330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLogic: {fileID: 210726229}
+  startScale: {x: 0, y: 0, z: 0}
   rotationAmount: 20
-  movementAmount: 10
   movementSpeed: 0.7
   rotationSpeed: 5
 --- !u!225 &1802610942
@@ -2694,6 +2702,7 @@ MonoBehaviour:
   rightPieceVFX: {fileID: 0}
   correctSFX: {fileID: 0}
   scaleMultiplier: 1
+  afterImage: {fileID: 446233840}
 --- !u!225 &2129165980
 CanvasGroup:
   m_ObjectHideFlags: 0

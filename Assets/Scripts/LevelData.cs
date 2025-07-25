@@ -99,7 +99,6 @@ public class LevelData : MonoBehaviour
             }
         }
         ifConnectedStopHint();
-        Debug.Log(hintTimeSpent);
     }
 
     private void generateHint()

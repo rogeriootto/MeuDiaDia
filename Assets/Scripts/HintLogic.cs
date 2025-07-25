@@ -21,18 +21,15 @@ public class HintLogic : MonoBehaviour
 
     void Update()
     {
-        if (hint)
+        if (hint && !mainLogic.GetComponent<PieceDrag>().isDragging)
         {
             Hint();
-           
         }
 
     }
 
     void Hint()
     {
-        Debug.Log("Hint logic active");
-        Debug.Log("breathingIn: " + breathingIn);
         Vector3 targetScale = breathingIn ? breathIn : breathOut;
         Vector3 startScale = breathingIn ? breathOut : breathIn;
 

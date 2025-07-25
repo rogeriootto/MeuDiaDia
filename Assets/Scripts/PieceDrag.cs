@@ -16,10 +16,14 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
      public AudioClip correctSFX;
 
     [SerializeField] private float scaleMultiplier;
+    [SerializeField] private GameObject afterImage;
+    private CardEffect cardEffect;
 
-    public void Awake() {
+    public void Awake()
+    {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        cardEffect = afterImage.GetComponent<CardEffect>();
     }
 
     void Start() {
@@ -33,6 +37,7 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if (isConnected) return; 
         Debug.Log("OnBeginDrag called on " + gameObject.name);
         rectTransform.localScale = finalScale;
+        cardEffect.FinalScale();
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -50,6 +55,7 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
             rectTransform.anchoredPosition = startPosition;
             rectTransform.localScale = startScale;
+            cardEffect.NormalScale();
             LevelData.howManyWrong++;
 
         }

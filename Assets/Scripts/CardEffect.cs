@@ -35,6 +35,16 @@ public class CardEffect : MonoBehaviour
 
     public void Update()
     {
+        if (mainLogic.GetComponent<PieceDrag>().isConnected)
+        {
+            FinalScale();
+        }
+
+        if (hint == null)
+        {
+            hint = GetComponent<HintLogic>();
+        }
+
         if (GameData.Instance.selectedPlayer.fancyGraphicsOn)
         {
             SmothMovement();
@@ -44,8 +54,7 @@ public class CardEffect : MonoBehaviour
         {
             NormalMovement();
         }
-
-        ScaleLogic();
+        
     }
 
     private void SmothMovement()
@@ -77,9 +86,22 @@ public class CardEffect : MonoBehaviour
         }
         else if (!pieceDrag.isConnected || !hint.hint)
         {
+            Debug.Log("Resetting scale");
             rectTransform.localScale = startScale;
         }
 
+    }
+
+    public void NormalScale()
+    {
+        Debug.Log("Resetting scale to normal");
+        rectTransform.localScale = startScale;
+    }
+
+    public void FinalScale()
+    {
+        Debug.Log("Setting final scale");
+        rectTransform.localScale = pieceDrag.finalScale;
     }
     
 }
