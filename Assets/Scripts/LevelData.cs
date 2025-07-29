@@ -37,6 +37,8 @@ public class LevelData : MonoBehaviour
     public static bool piece2 = false;
     public static bool piece3 = false;
 
+    private static string[] fasesGaroto = { "Level-1", "Level-2", "Level-3", "Level-4", "Level-5", "Level-6" };
+    private static string[] fasesGarota = { "Level-1-Menina", "Level-2-Menina", "Level-3-Menina", "Level-4-Menina", "Level-5-Menina", "Level-6-Menina" };
 
     void Start()
     {
@@ -75,30 +77,32 @@ public class LevelData : MonoBehaviour
                 refPieces.SetActive(false);
             }
         }
-
-        if (isStartCountDown)
+        else
         {
-            timeSpentOnLevel += Time.deltaTime;
-
-            if ((!isPiece1Connected || !isPiece2Connected || !isPiece3Connected) && !piece1 && !piece2 && !piece3)
+            if (isStartCountDown)
             {
-                hintTimeSpent += Time.deltaTime;
+                timeSpentOnLevel += Time.deltaTime;
 
-                if (hintTimeSpent > GameData.Instance.selectedPlayer.hintTime)
+                if ((!isPiece1Connected || !isPiece2Connected || !isPiece3Connected) && !piece1 && !piece2 && !piece3)
                 {
-                    hintTimeSpent = 0f;
-                    generateHint();
-                    howManyHints++;
+                    hintTimeSpent += Time.deltaTime;
+
+                    if (hintTimeSpent > GameData.Instance.selectedPlayer.hintTime)
+                    {
+                        hintTimeSpent = 0f;
+                        generateHint();
+                        howManyHints++;
+                    }
+
                 }
 
+                if (howManyCorrect == 3)
+                {
+                    StartCoroutine(WaitAndGoToNextLevel());
+                }
             }
-
-            if (howManyCorrect == 3)
-            {
-                StartCoroutine(WaitAndGoToNextLevel());
-            }
+            ifConnectedStopHint();
         }
-        ifConnectedStopHint();
     }
 
     private void generateHint()
@@ -133,7 +137,44 @@ public class LevelData : MonoBehaviour
     {
         endTime = DateTime.Now;
         SaveDataToCSV();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameData.Instance.level++;
+        if (GameData.Instance.level >= 6)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        }
+        else
+        {
+            if (GameData.Instance.selectedPlayer.showBoyOn && GameData.Instance.selectedPlayer.showGirlOn)
+            {
+                int rng = UnityEngine.Random.Range(0, 2);
+                Debug.Log(rng);
+
+                if (rng == 0)
+                {
+                    Debug.Log("Fase menino rng");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(fasesGaroto[GameData.Instance.level]);
+                }
+                else
+                {
+                    Debug.Log("Fase menina rng");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(fasesGarota[GameData.Instance.level]);
+                }
+            }
+            else
+            {
+                if (GameData.Instance.selectedPlayer.showBoyOn)
+                {
+                    Debug.Log("Fase menino");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(fasesGaroto[GameData.Instance.level]);
+                }
+
+                if (GameData.Instance.selectedPlayer.showGirlOn)
+                {
+                    Debug.Log("Fase menina");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(fasesGarota[GameData.Instance.level]);
+                }
+            }
+        }
     }
 
     public static void SaveDataToCSV()

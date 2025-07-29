@@ -86,7 +86,6 @@ public class CardEffect : MonoBehaviour
         }
         else if (!pieceDrag.isConnected || !hint.hint)
         {
-            Debug.Log("Resetting scale");
             rectTransform.localScale = startScale;
         }
 
@@ -94,13 +93,11 @@ public class CardEffect : MonoBehaviour
 
     public void NormalScale()
     {
-        Debug.Log("Resetting scale to normal");
         rectTransform.localScale = startScale;
     }
 
     public void FinalScale()
     {
-        Debug.Log("Setting final scale");
         rectTransform.localScale = pieceDrag.finalScale;
     }
     

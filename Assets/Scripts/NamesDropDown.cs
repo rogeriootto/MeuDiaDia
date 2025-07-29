@@ -60,6 +60,5 @@ public class NamesDropDown : MonoBehaviour {
 
     void OnDropdownValueChanged(int value) {
         GameData.Instance.selectedPlayer = configManager.config.players[value];
-        Debug.Log("Selected player: " + GameData.Instance.selectedPlayer.name);
     }
 }

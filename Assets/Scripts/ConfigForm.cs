@@ -27,7 +27,6 @@ public class ConfigForm : MonoBehaviour
 
     public void SaveData()
     {
-
         if (configManager == null)
         {
             Debug.LogError("ConfigManager not found in the scene.");

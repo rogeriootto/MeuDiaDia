@@ -16,8 +16,8 @@ public class PieceDrop : MonoBehaviour, IDropHandler
                 eventData.pointerDrag.GetComponent<PieceDrag>().shouldReturnToStartPosition = false;
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                 LevelData.howManyCorrect++;
+                LevelData.hintTimeSpent = 0f;
                 CheckWichPieceIsConnected(eventData);
-                Debug.Log("Correct pieces: " + LevelData.howManyCorrect);
             }
         }
     }

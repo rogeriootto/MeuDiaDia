@@ -30,6 +30,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Level-6.unity
     guid: 73f91327c165c26459728397cdaa1190
   - enabled: 1
+    path: Assets/Scenes/Level-1-Menina.unity
+    guid: 556d2973796e2b979bee2f92732f6ea1
+  - enabled: 1
+    path: Assets/Scenes/Level-2-Menina.unity
+    guid: ca0cc62c6eaa171468c7453b0153e65b
+  - enabled: 1
+    path: Assets/Scenes/Level-3-Menina.unity
+    guid: 3a248514bda318491add596d5cce26f4
+  - enabled: 1
+    path: Assets/Scenes/Level-4-Menina.unity
+    guid: f5b06f44b11d19b4687d00338e2e0d57
+  - enabled: 1
+    path: Assets/Scenes/Level-5-Menina.unity
+    guid: 3f662c392a21661ae8403ff3436b67f9
+  - enabled: 1
+    path: Assets/Scenes/Level-6-Menina.unity
+    guid: f1d3264eba13816bab5ef007f766a7d2
+  - enabled: 1
     path: Assets/Scenes/PreMatch.unity
     guid: 2ad6e3864382a8d4f8436984d100dae4
   - enabled: 1

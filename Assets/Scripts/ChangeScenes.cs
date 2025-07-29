@@ -27,6 +27,34 @@ public class ChangeScenes : MonoBehaviour {
     public void RestartGame() {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
-    
 
+    public void StartGame()
+    {
+        GameData.Instance.level = 0;
+        if (GameData.Instance.selectedPlayer.showBoyOn && GameData.Instance.selectedPlayer.showGirlOn)
+        {
+            int random = Random.Range(0, 2);
+
+            if (random == 0)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level-1");
+            }
+            else
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level-1-Menina");
+            }
+        }
+        else
+        {
+            if (GameData.Instance.selectedPlayer.showBoyOn)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level-1");
+            }
+
+            if (GameData.Instance.selectedPlayer.showGirlOn)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level-1-Menina");
+            }
+        }
+    }
 }

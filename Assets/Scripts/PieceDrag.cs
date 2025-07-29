@@ -35,7 +35,6 @@ public class PieceDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (isConnected) return; 
-        Debug.Log("OnBeginDrag called on " + gameObject.name);
         rectTransform.localScale = finalScale;
         cardEffect.FinalScale();
         canvasGroup.blocksRaycasts = false;
